@@ -1,6 +1,6 @@
-# Biscoito da Sorte
+# Notes
 
-Aplicativo para salvar anotações de texto e áudio. Desenvolvida utilizando R 
+Aplicativo para salvar anotações de áudio e texto. Desenvolvida utilizando React e Tailwind. Projeto proposto pela Rocketseat no evento NLW.
 
 Primeira página:
 
@@ -23,6 +23,13 @@ Gravando nota:
 Escrevendo nota:
 <p align="center">
   <img alt="projeto notes" src=".github/page4.png" width="100%">
+</p>
+
+Buscando nota:
+<p align="center">
+  <img alt="projeto notes" src=".github/search1.png" width="100%">
+
+  <img alt="projeto notes" src=".github/search2.png" width="100%">
 </p>
 
 <hr>
