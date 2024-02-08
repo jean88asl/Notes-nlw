@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog"
-import { X } from 'lucide-react'
+import { X, ArrowRight } from 'lucide-react'
 import { ChangeEvent, FormEvent, useState } from "react"
 import { toast } from "sonner"
 
@@ -86,12 +86,12 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
   return (
     <Dialog.Root>
-      <Dialog.Trigger className="rounded-md flex flex-col bg-slate-700 p-5 text-left outline-none gap-3 hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400">
-        <span className="text-sm font-medium text-slate-200">Adicionar nota
+      <Dialog.Trigger className="rounded-md flex flex-col bg-slate-700 p-5 text-left outline-none gap-3 hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400 group">
+        <span className="text-sm flex gap-3 items-center font-medium text-slate-200 group-hover:text-lime-400">Adicionar nota <ArrowRight />
         </span>
 
         <p className="text-sm leading-6 text-slate-400">
-          Grave uma nota em áudio que será convertida para texto automaticamente.
+          Grave uma nota em áudio que será convertida para texto automaticamente. 
         </p>
       </Dialog.Trigger>
 
