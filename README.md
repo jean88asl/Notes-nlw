@@ -42,7 +42,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Tailwind
 - Vite
 - HTML
-- JavaScript/TypeScript
+- TypeScript
 - Git e Github
 - Figma
 
