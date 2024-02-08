@@ -2,6 +2,8 @@
 
 Aplicativo para salvar anotações de áudio e texto. Desenvolvida utilizando React e Tailwind. Projeto proposto pela Rocketseat no evento NLW.
 
+Deploy: <a target="_blank" href="https://notes-nlw.vercel.app/">aqui</a>!
+
 Primeira página:
 
 <p align="center">
