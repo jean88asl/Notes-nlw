@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react"
-import logo from "./assets/logo-nlw-expert.svg"
 import { NewNoteCard } from "./components/new-note-card"
 import { NodeCard } from "./components/note-card"
+import { PenLine } from 'lucide-react'
 
 interface Note {
   id: string
@@ -33,7 +33,7 @@ export function App() {
 
     setNotes(notesArray)
 
-    localStorage.setItem('notes', JSON.stringify(notesArray))    
+    localStorage.setItem('notes', JSON.stringify(notesArray))
   }
 
   function onNoteDeleted(id: string) {
@@ -58,7 +58,11 @@ export function App() {
 
   return (
     <div className="mx-auto max-w-6xl my-12 space-y-6 px-5">
-      <img src={logo} alt="NLW Expert" />
+      <div className="flex items-center gap-2 text-slate-700 text-4xl">
+        <PenLine />
+        <span className="font-riot">Notes</span>
+      </div>
+
 
       <form className="w-full">
         <input
@@ -75,7 +79,7 @@ export function App() {
         <NewNoteCard onNoteCreated={onNoteCreated} />
 
         {filteredNotes.map(note => {
-          return <NodeCard key={note.id} note={note} onNoteDeleted={onNoteDeleted}/>
+          return <NodeCard key={note.id} note={note} onNoteDeleted={onNoteDeleted} />
         })}
 
       </div>
