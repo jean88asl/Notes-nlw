@@ -38,7 +38,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
     setContent('')
     setShouldShowOnboarding(true)
 
-    toast.success('Nota criada com sucesso!')
+    toast.success('Nota criada com sucesso! 👏🏻')
   }
 
   function handleStartRecording() {
@@ -46,7 +46,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
       || 'webkitSpeechRecognition' in window
 
     if (!isSpeechRecognitionAPIavailable) {
-      alert('Infelizmente seu navegador não suporta a API de gravação!')
+      alert('Infelizmente seu navegador não suporta a API de gravação! 👎🏼')
     }
 
     setIsRecording(true)
