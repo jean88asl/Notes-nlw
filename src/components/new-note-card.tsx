@@ -7,7 +7,7 @@ interface NewNoteCardProps {
   onNoteCreated: (content: string) => void
 }
 
-let speechRecognition: SpeechRecognition | null = null
+let speechRecognition: SpeechRecognition | null = null;
 
 export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
   const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true)
@@ -49,6 +49,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
     if (!isSpeechRecognitionAPIavailable) {
       alert('Infelizmente seu navegador não suporta a API de gravação! 👎🏼')
+      return
     }
 
     setIsRecording(true)
