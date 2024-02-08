@@ -30,6 +30,8 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
     event.preventDefault()
 
     if (content === "") {
+      setContent('')
+      setShouldShowOnboarding(true)
       return
     }
 
@@ -42,7 +44,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
   }
 
   function handleStartRecording() {
-    const isSpeechRecognitionAPIavailable = 'SpeechRecognition' in window 
+    const isSpeechRecognitionAPIavailable = 'SpeechRecognition' in window
       || 'webkitSpeechRecognition' in window
 
     if (!isSpeechRecognitionAPIavailable) {
@@ -52,7 +54,8 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
     setIsRecording(true)
     setShouldShowOnboarding(false)
 
-    const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition
+    const SpeechRecognitionAPI =
+      window.SpeechRecognition || window.webkitSpeechRecognition
 
     speechRecognition = new SpeechRecognitionAPI()
 
@@ -64,13 +67,13 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
     speechRecognition.onresult = (event) => {
       const transcription = Array.from(event.results).reduce((text, result) => {
         return text.concat(result[0].transcript)
-      }, '') 
+      }, '')
 
       setContent(transcription)
     }
 
     speechRecognition.onerror = (event) => {
-      console.log(event)
+      console.log(event.error)
     }
 
     speechRecognition.start()
@@ -91,7 +94,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
         </span>
 
         <p className="text-sm leading-6 text-slate-400">
-          Grave uma nota em áudio que será convertida para texto automaticamente. 
+          Grave uma nota em áudio que será convertida para texto automaticamente.
         </p>
       </Dialog.Trigger>
 
